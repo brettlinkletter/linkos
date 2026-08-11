@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+
+cd "$(dirname "$0")"
+
+# Install dependencies if missing
+if [ ! -d "node_modules" ]; then
+  echo "  Installing dependencies..."
+  npm install
+fi
+
+# Run the setup wizard
+npx tsx scripts/setup.ts
